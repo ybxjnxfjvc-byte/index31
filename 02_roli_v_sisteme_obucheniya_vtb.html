@@ -1,0 +1,148 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ВТБ — роли и развитие</title><style>
+:root{
+ --bg:#071126;--bg2:#0a1b3d;--panel:#102855;--panel2:#0d2148;--blue:#0b42d8;
+ --blue2:#2878ff;--cyan:#36c6f4;--ink:#fff;--muted:#b7c7e6;--line:rgba(255,255,255,.12);
+ --shadow:0 25px 75px rgba(0,14,60,.36)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+ radial-gradient(circle at 80% 8%,rgba(40,120,255,.23),transparent 25%),
+ radial-gradient(circle at 12% 45%,rgba(54,198,244,.09),transparent 22%),
+ linear-gradient(180deg,#061027 0%,#071a39 48%,#071126 100%);
+ color:var(--ink);font:16px/1.55 Inter,Arial,Helvetica,sans-serif}
+a{color:inherit}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100vh}
+.sidebar{position:sticky;top:0;height:100vh;padding:22px 18px;background:rgba(5,16,38,.94);
+ border-right:1px solid var(--line);backdrop-filter:blur(16px);z-index:20}
+.brandbox{display:flex;align-items:center;justify-content:flex-start;min-height:92px;border-radius:24px;padding:12px 15px;background:#fff;box-shadow:var(--shadow)}
+.brandbox img{display:block;width:120px;max-width:100%;height:auto;border-radius:18px}
+.kicker{margin-top:18px;color:#83b5ff;font-size:12px;text-transform:uppercase;letter-spacing:.18em;font-weight:800}
+.course-title{font-size:20px;font-weight:850;margin:4px 0 16px}
+.nav{display:grid;gap:8px;margin-top:18px}
+.nav a{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;text-decoration:none;padding:10px;border-radius:14px;color:#cbd8f1}
+.nav a:hover,.nav a.active{background:linear-gradient(90deg,rgba(40,120,255,.26),rgba(54,198,244,.08));color:white}
+.nav i{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#143269;font-style:normal;font-weight:800}
+.profile{margin-top:18px;padding:14px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.035)}
+.profile input{width:100%;margin-top:8px;padding:10px 11px;background:#08162f;color:white;border:1px solid var(--line);border-radius:10px}
+.profile-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+button,.btn{appearance:none;border:0;border-radius:12px;padding:11px 14px;background:linear-gradient(135deg,var(--blue2),#0f56eb);color:white;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;justify-content:center;align-items:center}
+button.secondary,.btn.secondary{background:#173468}
+.progress{height:7px;background:#0c1c3c;border-radius:999px;overflow:hidden;margin-top:10px}
+.progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--blue2));width:0}
+.main{min-width:0}
+.topbar{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 28px;
+ background:rgba(6,16,39,.74);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topbar .crumb{color:#c5d3ec}.page-switch{display:flex;gap:8px;flex-wrap:wrap}
+.page-switch a{font-size:13px;text-decoration:none;padding:8px 10px;border:1px solid var(--line);border-radius:999px}
+.content{max-width:1180px;margin:auto;padding:40px 34px 90px}
+.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:30px;padding:52px;min-height:420px;
+ background:linear-gradient(135deg,#0e43ca 0%,#123fb2 45%,#091d4e 100%);box-shadow:var(--shadow)}
+.hero:before{content:"";position:absolute;right:-120px;top:-170px;width:560px;height:560px;border-radius:50%;border:1px solid rgba(255,255,255,.14);box-shadow:0 0 0 70px rgba(255,255,255,.025),0 0 0 145px rgba(54,198,244,.04)}
+.hero:after{content:"";position:absolute;right:5%;bottom:3%;width:310px;height:160px;background:
+ linear-gradient(160deg,transparent 30%,rgba(255,255,255,.10) 31% 34%,transparent 35%),
+ linear-gradient(160deg,transparent 46%,rgba(54,198,244,.25) 47% 52%,transparent 53%);transform:skewX(-16deg)}
+.hero>*{position:relative;z-index:2}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 10px;border:1px solid rgba(255,255,255,.2);border-radius:999px;color:#d8e9ff;font-size:12px;text-transform:uppercase;letter-spacing:.14em}
+h1{font-size:clamp(40px,6vw,76px);line-height:.98;max-width:800px;margin:22px 0 18px;letter-spacing:-.04em}
+.lead{font-size:19px;color:#e0ebff;max-width:790px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 34px}
+.stat{padding:22px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+.stat strong{display:block;font-size:28px}.stat span{color:var(--muted);font-size:14px}
+.section{padding:42px 0;border-bottom:1px solid var(--line)}
+.section h2{font-size:clamp(28px,4vw,46px);margin:0 0 14px;letter-spacing:-.03em}
+.section-intro{max-width:830px;color:#bfd0ed;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{min-width:0;padding:22px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.028))}
+.card h3{margin:0 0 8px;font-size:19px}.card p{margin:0;color:#bed0eb}
+.tag{display:inline-block;margin-bottom:12px;padding:6px 9px;border-radius:999px;background:#153a7b;color:#cce1ff;font-size:12px}
+.timeline{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:50px minmax(0,1fr);gap:14px;align-items:start;padding:18px;border:1px solid var(--line);border-radius:18px;background:#0d234b}
+.step b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:linear-gradient(145deg,var(--blue2),#174ea4);font-size:18px}
+.step p{margin:4px 0 0;color:#bfd0ed}
+.callout{padding:24px;border-left:4px solid var(--cyan);background:linear-gradient(90deg,rgba(54,198,244,.12),rgba(40,120,255,.06));border-radius:0 18px 18px 0}
+.rolegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.role{padding:24px;border-radius:22px;background:linear-gradient(155deg,#112c60,#0b2047);border:1px solid var(--line)}
+.role h3{font-size:22px;margin:0 0 8px}.role ul{padding-left:20px;color:#c2d2ed}
+.badge{display:inline-block;padding:6px 9px;border-radius:999px;background:rgba(54,198,244,.11);color:#9eeaff;font-size:12px}
+.trainer{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.question,.result{padding:26px;border-radius:22px;border:1px solid var(--line);background:#0c2149}
+.options{display:grid;gap:10px;margin-top:16px}.option{display:block;width:100%;text-align:left;background:#173b7d}.option:hover{background:#2150a6}
+.footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#92a5c9;font-size:13px;padding-top:28px}
+@media(max-width:980px){
+ .layout{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line)}
+ .nav{grid-template-columns:repeat(3,1fr)}.profile{max-width:540px}.content{padding:26px 20px 70px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:36px}.stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+ .sidebar{padding:16px}.nav{grid-template-columns:1fr 1fr}.nav a{grid-template-columns:30px 1fr;font-size:13px}
+ .topbar{padding:11px 14px}.crumb{display:none}.content{padding:18px 14px 55px}
+ .hero{padding:26px 20px;min-height:360px;border-radius:24px}h1{font-size:42px}.lead{font-size:16px}
+ .stats,.grid,.rolegrid,.trainer{grid-template-columns:1fr}.section{padding:32px 0}
+ .profile-actions{grid-template-columns:1fr}.page-switch a{font-size:11px}.brandbox{justify-content:center}
+}
+</style></head><body><div class="layout"><aside class="sidebar">
+<div class="brandbox"><img src="data:image/png;base64,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" alt="ВТБ"></div>
+<div class="kicker">Возможности твоего будущего</div><div class="course-title">ВТБ · система обучения</div>
+<nav class="nav"><a href="index.html" class=""><i>1</i><span>Система обучения</span></a><a href="02_roli_v_sisteme_obucheniya_vtb.html" class="active"><i>2</i><span>Роли и развитие</span></a><a href="03_trenazher_finansovyh_resheniy_vtb.html" class=""><i>3</i><span>Тренажёр решений</span></a></nav>
+<div class="profile"><strong id="profileLabel">Профиль обучения</strong>
+<div style="color:#9fb0cf;font-size:13px;margin-top:4px">Имя необязательно — все материалы доступны без входа.</div>
+<input id="nameInput" placeholder="Ваше имя (необязательно)">
+<div class="profile-actions"><button onclick="saveName()">Сохранить</button><button class="secondary" onclick="skipName()">Без входа</button></div>
+<div class="progress"><span id="progressBar"></span></div></div>
+<div style="margin-top:16px;font-size:12px;color:#7f94bb">GitHub: <a href="https://github.com/ybxjnxfjvc-byte/index31" target="_blank" rel="noopener">index31</a></div>
+</aside><main class="main"><header class="topbar"><div class="crumb">ВТБ / Значимость для ролей</div>
+<div class="page-switch"><a href="index.html">01</a><a href="02_roli_v_sisteme_obucheniya_vtb.html">02</a><a href="03_trenazher_finansovyh_resheniy_vtb.html">03</a></div></header>
+<div class="content">
+<section class="hero">
+<span class="eyebrow">Страница 02 · роли</span>
+<h1>Что обучение даёт разным командам ВТБ</h1>
+<p class="lead">На стороне клиента банк выглядит единым. Внутри него работают разные направления: розница, малый и средний бизнес, корпоративно-инвестиционный блок, технологии, поддерживающие функции и управление. Система обучения соединяет их общими принципами и оставляет профессиональную глубину каждой роли.</p>
+<div class="hero-actions"><a class="btn" href="#roles">Разобрать роли</a><a class="btn secondary" href="03_trenazher_finansovyh_resheniy_vtb.html">К тренажёру →</a></div>
+</section>
+<section class="section" id="roles"><h2>Траектории по ролям</h2><div class="rolegrid">
+<article class="role"><span class="badge">Розничный бизнес</span><h3>Менеджер по работе с клиентами</h3><ul><li>выявляет финансовую задачу вместо механической презентации продуктов;</li><li>понимает, какие решения логично сочетать;</li><li>корректно объясняет условия и ограничения;</li><li>переводит клиента в удобный цифровой канал без потери качества сервиса.</li></ul></article>
+<article class="role"><span class="badge">СМБ</span><h3>Менеджер по работе с бизнесом</h3><ul><li>видит задачи предпринимателя шире одного расчётного счёта;</li><li>связывает расчёты, финансирование, депозиты и бизнес-сервисы;</li><li>учится задавать вопросы о модели бизнеса и денежных потоках;</li><li>понимает границы своей компетенции и подключает профильных экспертов.</li></ul></article>
+<article class="role"><span class="badge">Корпоративный блок</span><h3>Специалист по крупному бизнесу</h3><ul><li>развивает понимание сложных финансовых решений;</li><li>учится работать в межфункциональной команде;</li><li>видит риски, зависимости и требования к качеству данных;</li><li>закрепляет проектную дисциплину и ответственность за коммуникацию.</li></ul></article>
+<article class="role"><span class="badge">Технологии</span><h3>Разработчик / аналитик / продуктовая команда</h3><ul><li>понимает клиентскую ценность функции, которую создаёт;</li><li>видит нормативные и риск-ограничения;</li><li>учится говорить с бизнесом на языке сценариев и метрик;</li><li>получает маршрут развития технической и продуктовой экспертизы.</li></ul></article>
+<article class="role"><span class="badge">Операции и поддержка</span><h3>Специалист внутренних процессов</h3><ul><li>понимает влияние своей работы на клиента и фронт-линии;</li><li>закрепляет точность, сроки и контроль ошибок;</li><li>обрабатывает исключения по понятному алгоритму;</li><li>снижает риск повторяющихся проблем через анализ причин.</li></ul></article>
+<article class="role"><span class="badge">Руководитель</span><h3>Менеджер команды</h3><ul><li>видит готовность сотрудников по навыкам и практике;</li><li>получает основу для планирования развития;</li><li>использует наставничество как управляемый процесс;</li><li>может формировать кадровый резерв на основе подтверждённых результатов.</li></ul></article>
+</div></section>
+<section class="section"><h2>Что получает новый сотрудник</h2><div class="grid">
+<div class="card"><span class="tag">Старт</span><h3>Понятный контекст</h3><p>Как устроен банк, кому мы помогаем, как связаны подразделения и какой результат ожидается от роли.</p></div>
+<div class="card"><span class="tag">Практика</span><h3>Сценарии вместо лекций</h3><p>Клиентские ситуации, операции, решения и ошибки, которые действительно возникают в работе.</p></div>
+<div class="card"><span class="tag">Развитие</span><h3>Следующий шаг виден заранее</h3><p>Сотрудник понимает, какие навыки нужны для более сложных задач и следующей роли.</p></div>
+</div></section>
+<section class="section"><h2>Что получает наставник</h2><div class="timeline">
+<div class="step"><b>1</b><div><h3>Единая программа</h3><p>Есть готовая последовательность тем и практических заданий, поэтому адаптация не зависит от того, насколько занят конкретный наставник.</p></div></div>
+<div class="step"><b>2</b><div><h3>Больше времени на разбор нюансов</h3><p>Повторяющуюся теорию сотрудник проходит самостоятельно, а наставник фокусируется на реальных кейсах.</p></div></div>
+<div class="step"><b>3</b><div><h3>Понятные критерии допуска</h3><p>Решение о самостоятельности строится на наблюдаемом результате, а не на общем впечатлении.</p></div></div>
+</div></section>
+<section class="section"><h2>Логика карьерного развития</h2><div class="grid">
+<div class="card"><h3>Экспертная траектория</h3><p>Более глубокие продукты, сложные клиенты, специализация и внутреннее консультирование.</p></div>
+<div class="card"><h3>Проектная траектория</h3><p>Работа в продуктовых и межфункциональных командах, ответственность за изменение и результат.</p></div>
+<div class="card"><h3>Управленческая траектория</h3><p>Наставничество, управление качеством команды, развитие людей и ответственность за бизнес-результат.</p></div>
+</div></section>
+<section class="section"><div class="callout">Профиль работодателя ВТБ отдельно подчёркивает профессиональное обучение и развитие: образовательные курсы, тренинги, обмен опытом внутри команды и доступ к онлайн-библиотекам. Система кейса развивает эту логику в единую карту «учусь → применяю → подтверждаю → расту».</div></section>
+<footer class="footer"><span>Кейс 31 · Банк ВТБ (ПАО)</span>
+<span><a href="https://github.com/ybxjnxfjvc-byte/index31" target="_blank" rel="noopener">GitHub index31</a> · <a href="https://ybxjnxfjvc-byte.github.io/index31/" target="_blank" rel="noopener">GitHub Pages</a></span></footer></div>
+</main></div>
+<script>
+const KEY='vtb_index31_state_v1';
+let state={name:'',guest:false,visited:{},trainer:0};
+try{state=Object.assign(state,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));renderProfile()}
+function renderProfile(){
+ const n=document.getElementById('nameInput'),label=document.getElementById('profileLabel'),bar=document.getElementById('progressBar');
+ if(n&&state.name)n.value=state.name;
+ if(label)label.textContent=state.name?state.name:(state.guest?'Гость':'Профиль обучения');
+ if(bar)bar.style.width=Math.min(100,Object.keys(state.visited||{}).length/3*100)+'%';
+}
+function saveName(){const n=document.getElementById('nameInput');if(!n)return;state.name=(n.value||'').trim();state.guest=false;save()}
+function skipName(){state.name='';state.guest=true;save()}
+function markPage(id){state.visited=state.visited||{};state.visited[id]=true;save()}
+document.addEventListener('DOMContentLoaded',renderProfile);
+</script>
+<script>markPage('p2')</script></body></html>
